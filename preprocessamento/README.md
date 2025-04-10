@@ -1,4 +1,4 @@
-## ⚙️ Etapa de Pré Processamento
+## ⚙️ Pré Processamento
 ### Tipos de Dados
 Assim que os dados foram lidos, foi verificado se os tipos de dados de cada uma das variáveis eram condizentes com os dados e sim, a princípio, os dados estão de acordo e não precisei fazer conversões. 
 ### Dados Faltantes
