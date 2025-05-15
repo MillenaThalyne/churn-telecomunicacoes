@@ -59,3 +59,35 @@ Para finalizar essa etapa, foi substituido os nomes das colunas pela tradução 
 * 'PaymentMethod': 'Metodo_Pagamento'. <br>
 
 💡*Você pode verificar mais informações e os códigos dessa etapa no [notebook de pré-processamento](https://github.com/MillenaThalyne/churn-telecomunicacoes/blob/main/preprocessamento/Churn_TELECON_Pre_Processamento.ipynb).*
+
+## Etapa de Pré Processamento (Parte II) 
+Nessa etapa, foi realizado análises univariadas e bivariadas a fim de entender as variáveis mais a fundo e a relação delas com a classe (Churn). 
+
+### Análise Univariada
+- **Estatísticas Básicas**: Nessa análise, podemos ver que a variável **Total_Pago** é a que possui maior variação de dados, pois a sua média era muito discrepante do valor máximo, porém ainda estava dentro do esperado e, por isso, não senti necessidade de fazer algum tratamento.
+- **Variáveis Numéricas**:
+    - A única variável que tem algum tipo de alteração em seus dados foi Total_Pago, enquanto Tempo_como_Cliente apresentou-se bem equilibrada.
+- **Variáveis Categóricas**: 
+    - Gênero: Existe um equilíbrio grande; 
+    - Método de Pagamento: A classe que se sobressai é a de Cheque Eletrônico;
+    - Churn (Classe): Existem muito mais clientes Não Churn do que Churn;
+    - Tipo de Contrato: O contrato que maior se sobressai entre os clientes é o Mês a Mês;
+    - Streaming de TV: Existe um certo equilíbrio entre clientes que solicitaram ou não um serviço de Streaming para TV, enquanto existe uma baixa grande em clientes que não possuem serviço de internet. 
+- **Variáveis Booleanas**: 
+    - Casado: Possui bastante equilíbrio nessa variável;
+    - Dependentes: Existem muito mais clientes que não possuem dependentes; 
+    - Idoso: Existem muito mais clientes que não são idosos;
+
+### Análise Bivariada
+- **Relação entre Gênero e Churn**: Essa relação é bem fraca, onde podemos notar que existe um equilíbrio bem grande entre os gêneros que são ou não Churn;
+- **Relação entre Idoso e Churn**: É notável que quando o cliente é Churn, existe uma porcentagem deles que são idosos também, mas é uma porcentagem sutil; 
+- **Relação entre Tempo como Cliente e Churn**: Essas variáveis possuem uma relação muito forte, onde podemos notar que quanto menor o tempo como cliente, mais propenso ele é de ser Churn;
+- **Relação entre Tipo de Contrato, Total Pago e Churn**: Pode-se notar que, para clientes Churn, a partir do tipo de contrato de 1 ano, os clientes possuem um total pago maior e a quantidade de clientes diminui também.
+- **Relação entre Método de Pagamento e Churn**: O método de pagamento mais utilizado quando se é Churn é o Cheque Eletrônico;
+- **Relação entre Casado e Churn**: É notável que maioria dos clientes Churn não são casados, enquanto que mais da metade dos clientes que não são Churn, são casados;
+- **Relação entre Servico de Internet e Churn**: O Serviço de Internet mais utilizado por clientes Churn é o de Fibra Otica.
+### Variáveis com Maior Impacto sobre a Classe (Churn)
+- De acordo com as análises realizadas anteriormente, as classes que possuem maior impacto sobre o cliente ser ou não Churn é, principalmente, o **Tempo_como_Cliente**, **Tipo_Contrato** e **Total_Pago**, pois é notável que o tempo como cliente influencia muito se ele vai se tornar Churn, principalmente nos primeiros meses como cliente, e por causa disso, o tipo de contrato de Mês a Mês precisa conter algum elemento que estimule o cliente a continuar, trazendo formas de desconto para que o seu total pago não seja tão elevado. 
+- Outra variável que possui uma quantidade muito grande de clientes Churn é os que utilizaram Fibra Ótica no seu Serviço de Internet. É importante investigar se esse elemento está afetando o motivo do cliente se tornar Churn ou não. Isso também é notado em clientes que utilizaram o Cheque Eletrônico como Método de Pagamento, é uma quantidade muito discrepante entre os clientes que são Churn e, por isso, é importante verificar esse elemento.
+
+💡*Você pode verificar mais informações e os códigos dessa etapa no [notebook de pré-processamento (parte II)](https://github.com/MillenaThalyne/churn-telecomunicacoes/blob/main/preprocessing_2/preprocessing_2.ipynb).*
